@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="G:\マイドライブ\学校\授業\3年 前期\木18 システム開発グループ演習\QRAttendanceSystem\selenium_env"
+VIRTUAL_ENV="C:\Users\sasho\Documents\QRAttendanceSystem\selenium_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

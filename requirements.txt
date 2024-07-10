@@ -2,3 +2,12 @@ Python==3.10.11
 pip==23.0.1
 Django==5.0.6
 google-api-python-client==2.136.0
+
+
+#仮想環境立ち上げ
+python -m venv selenium_env
+
+selenium_env\Scripts\activate
+
+pip install Django==5.0.6
+pip install google-api-python-client==2.136.0
