@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>新規授業作成</title>
+</head>
+<body>
+    <h1>新規授業作成</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_name">授業名 : </label>
+        {{ form.name }}
+        <br>
+        <label for="id_start_time">開始時間 : </label>
+        {{ form.start_time }}
+        <br>
+        <button type="submit">作成</button>
+    </form>
+</body>
+</html>
