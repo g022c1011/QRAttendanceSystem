@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Attendance
 
-admin.site.register(Attendance)
+@admin.register(Attendance)
 class AttendanceAdmin(admin.ModelAdmin):
     list_display = ('course', 'student', 'attendance_time')
     search_fields = ('student__name', 'course__name')

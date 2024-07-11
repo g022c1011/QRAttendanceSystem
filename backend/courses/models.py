@@ -14,3 +14,4 @@ class Session(models.Model):
 
     def __str__(self):
         return f'{self.course.name} Session from {self.start_time} to {self.end_time}'
+    
