@@ -8,9 +8,9 @@ qrcode==7.4.2
 Vue.js==3.4.31
 
 #仮想環境立ち上げ
-python -m venv selenium_env
+python -m venv env
 
-selenium_env\Scripts\activate
+env\Scripts\activate
 
 pip install Django==5.0.6
 pip install google-api-python-client==2.136.0
