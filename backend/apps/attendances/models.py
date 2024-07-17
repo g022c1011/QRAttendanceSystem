@@ -1,6 +1,6 @@
 from django.db import models
-from courses.models import Course
-from students.models import Student
+from apps.courses.models import Course
+from apps.students.models import Student
 
 class Attendance(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
