@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 
 AUTH_USER_MODEL = "accounts.User"
 
-LOGIN_URL = '/students/home/'
+LOGIN_URL = '/accounts/login/'
