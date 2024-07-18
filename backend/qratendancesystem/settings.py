@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.courses',
     'apps.students',
     'apps.users',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'qratendancesystem.urls'
@@ -66,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -125,3 +129,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+)
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_OAUTH2_CLIENT_ID # クライアントID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_OAUTH2_CLIENT_SECRET # クライアント シークレット

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h1>{{ user.username }}さんがログイン中です</h1>
+        <a href="{% url 'logout' %}">ログアウト</a>
+    {% else %}
+        <h1>メインメニュー</h1>
+        <p>ログインページへ</p>
+        <a href="{% url 'login' %}">ログインする</a>
+    {% endif %}
+</body>
+</html>

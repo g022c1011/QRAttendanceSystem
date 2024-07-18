@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+</head>
+<body>
+    <h2>ログイン</h2>
+    <ul>
+        <li><a href="{% url 'social:begin' 'google-oauth2' %}">Googleでログイン</a></li>
+    </ul>
+    <a href="{% url 'index' %}">戻る</a>
+</body>
+</html>
