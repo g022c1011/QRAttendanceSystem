@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ログイン</title>
+    </head>
+    <body>
+        <h1>ユーザーページ</h1>
+        <form action="{% url 'accounts:login' %}" method="post">
+            <label for="id_name">{{ user.username }} でログイン中</label>
+            <br>
+            <br>
+            <button type="button" onclick="location.href=`{% url 'accounts:logout' %}`">
+                ログアウト
+            </button>
+        </form>
+    </body>
+</html>
