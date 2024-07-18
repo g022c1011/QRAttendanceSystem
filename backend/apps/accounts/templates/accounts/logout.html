@@ -6,6 +6,8 @@
     </head>
     <body>
         <p>ログアウトしました</p>
-        <a href="{% url 'students:home' %}">トップへ</a>
+        <button type="button" onclick="location.href=`{% url 'students:home' %}`">
+            ホームへ
+        </button>
     </body>
 </html>

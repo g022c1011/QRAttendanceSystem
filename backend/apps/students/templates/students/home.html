@@ -6,9 +6,13 @@
     </head>
     <body>
             <h1>生徒用ホーム</h1>
-            <ul>
-                <li><a href="{% url 'accounts:signup' %}">アカウント登録</a></li>
-                <li><a href="{% url 'accounts:login' %}">ログイン</a></li>
-            </ul>
+            <button type="button" onclick="location.href=`{% url 'accounts:signup' %}`">
+                アカウント登録
+            </button>
+            <br>
+            <br>
+            <button type="button" onclick="location.href=`{% url 'accounts:login' %}`">
+                ログイン
+            </button>
     </body>
 </html>
