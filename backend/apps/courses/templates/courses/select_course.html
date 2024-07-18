@@ -10,6 +10,6 @@
             <li>授業名 : {{ course.name }} 開始時間 : {{ course.start_time }}</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'create_course' %}">新規授業作成</a>
+    <a href="{% url 'courses:create' %}">新規授業作成</a>
 </body>
 </html>

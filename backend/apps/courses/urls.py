@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import select_course, create_course
+from . import views
+
+app_name = "courses"
 
 urlpatterns = [
-    path('select/', select_course, name='select_course'),
-    path('create/', create_course, name='create_course'),
+    path('select/', views.select_course, name='select'),
+    path('create/', views.create_course, name='create'),
 ]
