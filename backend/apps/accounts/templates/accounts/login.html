@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ログイン</title>
+    </head>
+    <body>
+        <h1>ログイン</h1>
+        <form action="{% url 'accounts:login' %}" method="post">
+            {% csrf_token %} 
+            <label for="id_name">学籍番号 : </label>
+            {{ form.username }}
+            <br>
+            <br>
+            <label for="id_name">パスワード : </label>
+            {{ form.password }}
+            <br>
+            <br>
+            <button type="button" onclick="location.href=`{% url 'students:home' %}`">
+                戻る
+            </button>
+            <input type="submit" value="ログイン" />
+        </form>
+    </body>
+</html>
