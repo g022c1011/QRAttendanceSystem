@@ -2,10 +2,10 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
-        <title>ユーザー登録</title>
+        <title>アカウント登録</title>
     </head>
     <body>
-        <h1>ユーザー登録</h1>
+        <h1>アカウント登録</h1>
         <form action="{% url 'accounts:signup' %}" method="post">
             {% csrf_token %} 
             <label for="id_name">学籍番号 : </label>
