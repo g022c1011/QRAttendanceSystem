@@ -7,7 +7,7 @@
     <h1>授業選択</h1>
     <ul>
         {% for course in courses %}
-            <li>授業名 : {{ course.name }} 開始時間 : {{ course.start_time }}</li>
+            <li>授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}</li>
         {% endfor %}
     </ul>
     <button type="button" onclick="location.href=`{% url 'courses:create' %}`">
