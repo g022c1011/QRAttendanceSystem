@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from .forms import SignUpForm
 from django.contrib.auth import login, logout
 from .forms import LoginForm, SignUpForm
 from django.contrib.auth.decorators import login_required
@@ -9,7 +8,7 @@ def signup_view(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("students:home")
+            return redirect("accounts:home")
     else:
         form = SignUpForm()
     param = {"form": form}
@@ -22,7 +21,7 @@ def login_view(request):
             user = form.get_user()
             if user:
                 login(request, user)
-                return redirect("students:userpage")
+                return redirect("accounts:userpage")
     else:
         form = LoginForm()
     param = {"form": form}
@@ -32,3 +31,10 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return render(request, "accounts/logout.html")
+
+def home_view(request):
+    return render(request, "accounts/home.html")
+
+@login_required
+def userpage_view(request):
+    return render(request, "accounts/userpage.html")
