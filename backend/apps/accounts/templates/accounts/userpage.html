@@ -6,11 +6,17 @@
     </head>
     <body>
         <h1>ユーザーページ</h1>
-        <form action="{% url 'accounts:login' %}" method="post">
+        <form method="post">
+            {% csrf_token %}
             <label for="id_name">{{ user.username }} でログイン中</label>
             <br>
             <br>
-            <button type="button" onclick="location.href=`{% url 'accounts:logout' %}`">
+            {% if user.account_type == 'teacher' %}
+                <a href="{% url 'courses:select' %}">授業管理ページへ</a>
+            {% endif %}
+            <br>
+            <br>
+            <button type="submit" formaction="{% url 'accounts:logout' %}">
                 ログアウト
             </button>
         </form>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>教師ログイン</title>
+    </head>
+    <body>
+        <h1>教師ログイン</h1>
+        <form action="{% url 'accounts:teacher_login' %}" method="post">
+            {% csrf_token %} 
+            <label for="id_username">ユーザー名 : </label>
+            {{ form.username }}
+            <br>
+            <br>
+            <label for="id_password">パスワード : </label>
+            {{ form.password }}
+            <br>
+            <br>
+            <button type="button" onclick="location.href=`{% url 'accounts:login_account_selection' %}`">
+                戻る
+            </button>
+            <input type="submit" value="ログイン" />
+        </form>
+    </body>
+</html>

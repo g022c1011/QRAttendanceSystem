@@ -2,13 +2,13 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
-        <title>ログイン</title>
+        <title>生徒ログイン</title>
     </head>
     <body>
-        <h1>ログイン</h1>
-        <form action="{% url 'accounts:login' %}" method="post">
+        <h1>生徒ログイン</h1>
+        <form action="{% url 'accounts:student_login' %}" method="post">
             {% csrf_token %} 
-            <label for="id_username">ユーザーネーム or 学籍番号 : </label>
+            <label for="id_username">学籍番号(GXXXCXXXX) : </label>
             {{ form.username }}
             {% if form.username.errors %}
                 <div class="error">
@@ -30,7 +30,7 @@
             {% endif %}
             <br>
             <br>
-            <button type="button" onclick="location.href=`{% url 'accounts:home' %}`">
+            <button type="button" onclick="location.href=`{% url 'accounts:login_account_selection' %}`">
                 戻る
             </button>
             <input type="submit" value="ログイン" />

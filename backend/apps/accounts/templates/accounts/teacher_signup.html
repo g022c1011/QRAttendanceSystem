@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>教師アカウント登録</title>
+</head>
+<body>
+    <h1>教師アカウント登録</h1>
+    <form action="{% url 'accounts:teacher_signup' %}" method="post">
+        {% csrf_token %}
+        <label for="id_username">ユーザーネーム : </label>
+        {{ form.username }}
+        <br>
+        <br>
+        <label for="id_email">メールアドレス : </label>
+        {{ form.email }}
+        <br>
+        <br>
+        <label for="id_password1">パスワード : </label>
+        {{ form.password1 }}
+        <ul>
+            <li>ユーザーネーム、メールアドレスと似ているパスワード、<br>
+                よく使われるパスワードや数字のみのパスワードは使えません</li>
+            <li>パスワードは最低8文字以上必要です</li>
+        </ul>
+        <label for="id_password2">パスワード(確認用) : </label>
+        {{ form.password2 }}
+        <br>
+        <br>
+        <button type="button" onclick="location.href=`{% url 'accounts:home' %}`">
+            戻る
+        </button>
+        <input type="submit" value="登録" />
+    </form>
+</body>
+</html>

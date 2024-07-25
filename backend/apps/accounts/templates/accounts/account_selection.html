@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>アカウント選択</title>
+</head>
+<body>
+    <h1>アカウントの種類を選択してください</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="account_type" value="teacher">教師</button>
+        <button type="submit" name="account_type" value="student">生徒</button>
+    </form>
+    <br>
+    <button type="button" onclick="location.href=`{% url 'accounts:home' %}`">
+        戻る
+    </button>
+</body>
+</html>
