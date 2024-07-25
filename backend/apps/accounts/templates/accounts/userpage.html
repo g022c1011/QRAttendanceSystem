@@ -15,6 +15,10 @@
                 <button type="button" onclick="location.href=`{% url 'courses:select' %}`">
                     授業管理ページへ
                 </button>
+            {% elif user.account_type == 'student' %}
+                <button type="button" onclick="location.href=`{% url 'students_qr:generate_qr' %}`">
+                    QRコードページへ
+                </button>
             {% endif %}
             <br>
             <br>

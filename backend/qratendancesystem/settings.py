@@ -38,10 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.accounts',
-    'apps.attendances',
+    # 'apps.attendances',
     'apps.courses',
-    'apps.students',
-    'apps.users',
+    'apps.students_qr',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +124,8 @@ STATIC_URL = 'static/'
 AUTH_USER_MODEL = "accounts.User"
 
 LOGIN_URL = '/accounts/login/'
+
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
