@@ -55,43 +55,6 @@ def login_view(request):
     param = {"form": form}
     return render(request, "accounts/login.html", param)
 
-# def login_account_selection_view(request):
-#     if request.method == "POST":
-#         account_type = request.POST.get('account_type')
-#         if account_type in ['student']:
-#             request.session['account_type'] = account_type
-#             return redirect('accounts:student_login')
-#         elif account_type in ['teacher']:
-#             request.session['account_type'] = account_type
-#             return redirect('accounts:teacher_login')
-#     return render(request, "accounts/account_selection.html")
-
-# def teacher_login_view(request):
-#     if request.method == "POST":
-#         form = LoginForm(request, data=request.POST)
-#         if form.is_valid():
-#             user = form.get_user()
-#             if user and user.account_type == 'teacher':
-#                 login(request, user)
-#                 return redirect("accounts:userpage")
-#     else:
-#         form = LoginForm()
-#     param = {"form": form}
-#     return render(request, "accounts/teacher_login.html", param)
-
-# def student_login_view(request):
-#     if request.method == "POST":
-#         form = LoginForm(request, data=request.POST)
-#         if form.is_valid():
-#             user = form.get_user()
-#             if user:
-#                 login(request, user)
-#                 return redirect("accounts:userpage")
-#     else:
-#         form = LoginForm()
-#     param = {"form": form}
-#     return render(request, "accounts/student_login.html", param)
-
 # ログアウト
 @login_required
 def logout_view(request):

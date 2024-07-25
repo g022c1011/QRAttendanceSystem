@@ -12,7 +12,9 @@
             <br>
             <br>
             {% if user.account_type == 'teacher' %}
-                <a href="{% url 'courses:select' %}">授業管理ページへ</a>
+                <button type="button" onclick="location.href=`{% url 'courses:select' %}`">
+                    授業管理ページへ
+                </button>
             {% endif %}
             <br>
             <br>
