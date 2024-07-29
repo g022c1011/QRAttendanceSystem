@@ -8,7 +8,3 @@ class Course(models.Model):
     teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='courses')
     def __str__(self):
         return self.name
-
-    def __str__(self):
-        return f'{self.course.name} Session from {self.start_time} to {self.end_time}'
-    
