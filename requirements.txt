@@ -5,8 +5,6 @@ Django==5.0.6
 google-api-python-client==2.136.0
 qrcode==7.4.2
 
-Vue.js==3.4.31
-
 #仮想環境立ち上げ
 python -m venv env
 

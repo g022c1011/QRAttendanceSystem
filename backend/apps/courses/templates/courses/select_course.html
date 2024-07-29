@@ -34,8 +34,14 @@
             <li>終了済みの授業はありません。</li>
         {% endfor %}
     </ul>
+
     <button type="button" onclick="location.href=`{% url 'courses:create' %}`">
         新規授業作成
+    </button>
+    <br>
+    <br>
+    <button type="button" onclick="location.href=`{% url 'accounts:userpage' %}`">
+        戻る
     </button>
 </body>
 </html>

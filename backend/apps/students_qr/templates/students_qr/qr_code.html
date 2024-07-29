@@ -8,5 +8,10 @@
 <body>
     <h1>QR Code</h1>
     <img src="{{ qr_image_url }}" alt="QR Code">
+    <br>
+    <br>
+    <button type="button" onclick="location.href=`{% url 'accounts:userpage' %}`">
+        戻る
+    </button>
 </body>
 </html>
