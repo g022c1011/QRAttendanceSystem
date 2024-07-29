@@ -1,9 +1,5 @@
 from django.contrib import admin
-from .models import Course, Session
-
-class SessionInline(admin.TabularInline):
-    model = Session
-    extra = 0
+from .models import Course
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
@@ -13,4 +9,3 @@ class CourseAdmin(admin.ModelAdmin):
     ordering = ('start_date',)
     list_filter = ('start_time',)
     ordering = ('start_time',)
-    inlines = [SessionInline]
