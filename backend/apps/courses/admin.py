@@ -5,7 +5,5 @@ from .models import Course
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('name','start_date','start_time')
     search_fields = ('name',)
-    list_filter = ('start_date',)
-    ordering = ('start_date',)
-    list_filter = ('start_time',)
-    ordering = ('start_time',)
+    list_filter = ('start_date','start_time',)
+    ordering = ('start_date','start_time',)

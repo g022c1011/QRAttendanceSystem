@@ -3,4 +3,7 @@ from .models import User
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('username','account_type')
+    search_fields = ('username',)
+    list_filter = ('account_type',)
+    ordering = ('account_type',)
