@@ -3,29 +3,6 @@
 ## 概要
 QRコードの読み込むだけで出席確認が完了するWebアプリケーション
 
-##
-- インストール
-  ```bash
-  git clone https://github.com/g022c1011/QRAttendanceSystem
-  cd QRAttendanceSystem
-  ```
-- ライブラリインストール
-  ```bash
-  pip install -r requirements.txt
-  ```
-- マイグレーション
-  ```bash
-  python manage.py makemigrations
-  python manage.py migrate
-  ```
-- サーバ起動
-  ```bash
-  python manage.py runserver
-  ```
-- ブラウザでアクセス<br>
-  http://127.0.0.1:8000/accounts/home/
-
-
 ## 機能
 | 項目 | 内容 |
 | - | - |
