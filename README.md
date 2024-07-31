@@ -1,8 +1,17 @@
 # QRAttendanceSystem
 
-##
-<p>
-  <img src="https://img.shields.io/badge/-Python-ffff00.svg?logo=python&style=plastic">
-  <img src="https://img.shields.io/badge/-Django-092E20.svg?logo=django&style=plastic">
-</p>
+## 機能
+| 項目 | 内容 |
+| - | - |
 
+## 使用技術
+| 項目 | 内容 |
+| - | - |
+| バックエンド | Python 3.10.11 |
+| フレームワーク | Django 5.0.6 |
+| データベース | SQlite |
+| コード管理 | Github |
+
+
+
+## 今後の課題
