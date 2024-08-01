@@ -24,8 +24,8 @@ urlpatterns = [
     path('courses/', include('apps.courses.urls')), 
     path("accounts/", include("apps.accounts.urls")),
     path('students_qr/', include('apps.students_qr.urls')),
-    # path('attendances/', include('apps.attendances.urls')),
-]
+    path('attendances/', include('apps.attendances.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

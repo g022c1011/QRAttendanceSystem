@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>授業選択</title>
 </head>
 <body>
+
     <h1>授業選択</h1>
 
-    <a>本日の日付: {{ today }}</a>
+    <p>本日の日付: {{ today }}</p>
 
     <h2>今週の授業</h2>
     <ul>
         {% for course in this_week_courses %}
-            <li>授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}</li>
+            <li>
+                授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
+                <button type="button" onclick="location.href='{% url 'attendances:qr_reader' course_id=course.id %}'">
+                    QRコードリーダーに移動
+                </button>
+            </li>
         {% empty %}
             <li>今週の授業はありません。</li>
         {% endfor %}
@@ -20,7 +27,12 @@
     <h2>その他の授業</h2>
     <ul>
         {% for course in other_courses %}
-            <li>授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}</li>
+            <li>
+                授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
+                <button type="button" onclick="location.href='{% url 'attendances:qr_reader' course_id=course.id %}'">
+                    QRコードリーダーに移動
+                </button>
+            </li>
         {% empty %}
             <li>その他の授業はありません。</li>
         {% endfor %}
@@ -29,18 +41,23 @@
     <h2>終了済みの授業</h2>
     <ul>
         {% for course in finished_courses %}
-            <li>授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}</li>
+            <li>
+                授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
+                <button type="button" onclick="location.href='{% url 'attendances:qr_reader' course_id=course.id %}'">
+                    QRコードリーダーに移動
+                </button>
+            </li>
         {% empty %}
             <li>終了済みの授業はありません。</li>
         {% endfor %}
     </ul>
 
-    <button type="button" onclick="location.href=`{% url 'courses:create' %}`">
+    <button type="button" onclick="location.href='{% url 'courses:create' %}'">
         新規授業作成
     </button>
     <br>
     <br>
-    <button type="button" onclick="location.href=`{% url 'accounts:userpage' %}`">
+    <button type="button" onclick="location.href='{% url 'accounts:userpage' %}'">
         戻る
     </button>
 </body>
