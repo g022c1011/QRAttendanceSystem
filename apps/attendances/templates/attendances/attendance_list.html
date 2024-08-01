@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>出席リスト</title>
+</head>
+<body>
+    <h1>出席リスト</h1>
+    <p>授業名: {{ course.name }}</p>
+    <p>授業日時: {{ course.start_date }} {{ course.start_time }}</p>
+    <p>教師: {{ course.teacher }}</p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>学籍番号</th>
+                <th>出席時間</th>
+                <th>出席</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for attendance in attendances %}
+                <tr>
+                    <td>{{ attendance.student }}</td>
+                    <td>{{ attendance.attendance_time|date:"H:i" }}</td>
+                    <td>
+                        {% if attendance.attendance == 'Present' %}
+                            出席
+                        {% elif attendance.attendance == 'Late' %}
+                            遅刻
+                        {% elif attendance.attendance == 'Absent' %}
+                            欠席
+                        {% else %}
+                            未確認
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">出席記録はありません。</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+    <button type="button" onclick="location.href=`{% url 'courses:select' %}`">授業選択に戻る</button>
+</body>
+</html>
