@@ -16,10 +16,10 @@
             <li>
                 授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
                 <button type="button" onclick="location.href='{% url 'attendances:qr_reader' course_id=course.id %}'">
-                    QRコードリーダーに移動
+                    QRコードリーダー
                 </button>
                 <button type="button" onclick="location.href='{% url 'attendances:attendance_list' course_id=course.id %}'">
-                    出席リストを見る
+                    出席リスト
                 </button>
             </li>
         {% empty %}
@@ -33,10 +33,10 @@
             <li>
                 授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
                 <button type="button" onclick="location.href='{% url 'attendances:qr_reader' course_id=course.id %}'">
-                    QRコードリーダーに移動
+                    QRコードリーダー
                 </button>
                 <button type="button" onclick="location.href='{% url 'attendances:attendance_list' course_id=course.id %}'">
-                    出席リストを見る
+                    出席リスト
                 </button>
             </li>
         {% empty %}
@@ -50,10 +50,10 @@
             <li>
                 授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
                 <button type="button" onclick="location.href='{% url 'attendances:qr_reader' course_id=course.id %}'">
-                    QRコードリーダーに移動
+                    QRコードリーダー
                 </button>
                 <button type="button" onclick="location.href='{% url 'attendances:attendance_list' course_id=course.id %}'">
-                    出席リストを見る
+                    出席リスト
                 </button>
             </li>
         {% empty %}

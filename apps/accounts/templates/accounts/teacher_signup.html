@@ -7,7 +7,7 @@
     <h1>教師アカウント登録</h1>
     <form action="{% url 'accounts:teacher_signup' %}" method="post">
         {% csrf_token %}
-        <label for="id_username">ユーザーネーム : </label>
+        <label for="id_username">ユーザーネーム(教師名として表示されます) : </label>
         {{ form.username }}
         <br>
         <br>
